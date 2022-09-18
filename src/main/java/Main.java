@@ -7,14 +7,14 @@ public class Main {
 
         while (retry) {
             String result = "";
-            List<Integer> computer = baseballGame.create();
+            List<Integer> computer = baseballGame.create();     //컴퓨터 난수 생성
             while (!result.equals("3스트라이크")) {
                 System.out.println("숫자를 입력해주세요");
-                List<Integer> player = baseballGame.player();
+                List<Integer> player = baseballGame.player();   //플레이서 입력값
 
-                int total = baseballGame.total(computer, player);
-                int strike = baseballGame.strike(computer, player);
-                int ball = total - strike;
+                int total = baseballGame.total(computer, player);   //자리 상관없이 맞춘 횟수
+                int strike = baseballGame.strike(computer, player); //자리 까지 맞춘 횟수
+                int ball = total - strike;                          //볼
 
                 if (total == 0) {
                     result = "낫싱";
@@ -28,7 +28,7 @@ public class Main {
 
                 System.out.println(result);
             }
-            retry = baseballGame.retry();
+            retry = baseballGame.retry(); //재시작 판단여부
         }
     }
 }
