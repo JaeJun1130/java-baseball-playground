@@ -1,6 +1,4 @@
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,13 +10,7 @@ public class Main {
             List<Integer> computer = baseballGame.create();
             while (!result.equals("3스트라이크")) {
                 System.out.println("숫자를 입력해주세요");
-                Scanner scanner = new Scanner(System.in);
-                List<Integer> player = new ArrayList<>();
-                String input = scanner.next();
-
-                for (String number : input.split("")) {
-                    player.add(Integer.parseInt(number));
-                }
+                List<Integer> player = baseballGame.player();
 
                 int total = baseballGame.total(computer, player);
                 int strike = baseballGame.strike(computer, player);

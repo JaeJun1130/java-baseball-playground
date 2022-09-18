@@ -52,4 +52,15 @@ public class BaseballGame {
         }
         return false;
     }
+
+    public List<Integer> player() {
+        Scanner scanner = new Scanner(System.in);
+        List<Integer> player = new ArrayList<>();
+        String input = scanner.next();
+
+        for (String number : input.split("")) {
+            player.add(Integer.parseInt(number));
+        }
+        return player;
+    }
 }
